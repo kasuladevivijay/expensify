@@ -22,9 +22,9 @@ const decrementCount = ({ decrementBy = 1 } = {}) => ({
 	decrementBy: decrementBy
 });
 
-const setCount = () => ({
+const setCount = ({ count } = {}) => ({
 	type: 'SET',
-	count: 101
+	count: count
 });
 
 const reset = () => ({
@@ -74,4 +74,4 @@ store.dispatch(decrementCount());
 
 store.dispatch(reset());
 
-store.dispatch(setCount());
+store.dispatch(setCount({count: 102}));
