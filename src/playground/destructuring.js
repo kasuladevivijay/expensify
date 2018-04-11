@@ -32,3 +32,18 @@ const {city, temp: temperature} = person.location;
 if(city && temperature){
 	console.log(`It's ${temperature} degrees in ${city}`);
 }
+
+// Array Destructuring
+
+const address = ['sector 30D', 'Ghansoli', 'Navi Mumbai', '400701'];
+
+// Basic
+// syntax ->  const [sector, area, citi, pincode ] = address;
+
+// you can give default values to the variables created just like object destructuring
+// syntax -> const [, area, citi='Mumbai' ] = address;
+
+// you can vomit the variables which you donot want - perfectly valid
+const [, area, citi ] = address;
+
+console.log(`You are in ${area}, ${citi}`);
