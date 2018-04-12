@@ -32,7 +32,11 @@ const reset = () => ({
     count: 0
 });
 
-const store = createStore((state = {count: 0}, action) => {
+// Reducers
+// 1. Reducers are pure functions
+// 2. Never change state or action - never change the values directly
+
+const countReducer = (state = {count: 0}, action) => {
 	// redux actions definition
 	switch (action.type) {
 	case 'INCREMENT':
@@ -54,7 +58,9 @@ const store = createStore((state = {count: 0}, action) => {
 	default:
 		return state;
 	}
-});
+};
+
+const store = createStore(countReducer);
 
 // Redux Subscribe
 
